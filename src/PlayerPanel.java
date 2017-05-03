@@ -42,8 +42,6 @@ public class PlayerPanel extends JPanel {
 	public PlayerPanel(int pn){
 		hand = new DiceHand();
 		playerNumber = pn;
-
-		
 		setBorderLayout();
 		//setSize(600,449);	
 		setBackground(Color.LIGHT_GRAY);

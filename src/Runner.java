@@ -20,7 +20,6 @@ public class Runner {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setBackground(Color.WHITE);
 		frame.setMinimumSize(new Dimension(200,100));
-		
 		PlayerPanel pp = new PlayerPanel((playerNum));
 		JPanel gamePanel = new JPanel();
 		gamePanel.setBackground(Color.WHITE);
