@@ -34,7 +34,7 @@ public class PlayerPanel extends JPanel {
 	JLabel s5 = new JLabel(d1);
 	private int playerNumber;
 	
-	JLabel playerName,results = new JLabel("hello");
+	JLabel playerName,results = new JLabel(" ");
 	JButton rollButton;
 	DiceHand hand; 
 	
@@ -67,7 +67,6 @@ public class PlayerPanel extends JPanel {
 				case 1:
 					s1.setIcon(d1);
 					break;
-					
 				case 2:
 					s1.setIcon(d2);
 					break;
@@ -181,6 +180,7 @@ public class PlayerPanel extends JPanel {
 		}
 		hand.evalDiceHand();
 		hand.organizeDiceHand();
+		System.out.println("RUN");
 		results.setText(hand.determineDiceHand());
 	}
 	public void setBorderLayout(){

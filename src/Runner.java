@@ -16,13 +16,12 @@ public class Runner {
 	static ArrayList<PlayerPanel> winPanels;
 	static int playerNum = 1;
 	static void buildPlayer(){
-		JFrame frame = new JFrame("Player " + (playerNum+1));
+		JFrame frame = new JFrame("Player " + (playerNum));
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setBackground(Color.WHITE);
 		frame.setMinimumSize(new Dimension(200,100));
-		//frame.setLocation(Math.abs(playerNum*400-150),0);
 		
-		PlayerPanel pp = new PlayerPanel((playerNum+1));
+		PlayerPanel pp = new PlayerPanel((playerNum));
 		JPanel gamePanel = new JPanel();
 		gamePanel.setBackground(Color.WHITE);
 		gamePanel.add(pp);
@@ -44,21 +43,10 @@ public class Runner {
 		int playnum = frames.size()-1;
 		frames.get(playnum).dispose();
 		frames.remove(playnum);
+		panels.remove(playnum);
 		playerNum--;
 		
 	}
-	/*static void buildScoreBoard(){
-		JFrame frame = new JFrame("SCOREBOARD");
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setBackground(Color.WHITE);
-		frame.setMinimumSize(new Dimension(350,600));
-		//ScoreBoardPanel scp = new ScoreBoardPanel();
-		//frame.getContentPane().add(scp);
-		frame.pack();
-		frame.setLocationRelativeTo(null);
-		frame.setLocationByPlatform(true);
-		frame.setVisible(true);
-	}*/
 	static void checkWinner(){
 		winPanels = new ArrayList<PlayerPanel>();
 		winPanels.add(panels.get(0));
@@ -74,7 +62,7 @@ public class Runner {
 			}
 			
 		}
-		System.out.println("ITS NOT WOKRING");
+		//System.out.println("ITS NOT WOKRING");
 		for(PlayerPanel pp:panels){
 			pp.setBackground(Color.RED);
 			pp.diceHandPanel.setBackground(Color.RED);
@@ -101,8 +89,8 @@ public class Runner {
 			
 			Scanner reader = new Scanner(System.in);
 			Boolean gameLoop = true;
-			System.out.println("Welcome to the Dice Game CONSOLE\n");
-			System.out.println("Commands:\n/rollAll------Roll All Dice\n/Exit---------Exit all Games\n/RollAllAlot--Roll the Dice ALOT");
+			//System.out.println("Welcome to the Dice Game CONSOLE\n");
+			//System.out.println("Commands:\n/rollAll------Roll All Dice\n/Exit---------Exit all Games\n/RollAllAlot--Roll the Dice ALOT");
 			
 			JFrame frame = new JFrame("CONSOLE");
 			//frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -144,48 +132,6 @@ public class Runner {
 			}
 		}
 		
-		
-		/*
-		//creates one die and rolls it
-		Die die1 = new Die();
-		System.out.println(die1.rollDie());
-		*/
-		
-		
-		
-		
-		/*Scanner reader = new Scanner(System.in);
-		//Choose how many players
-		System.out.println("Welcome to the Dice Poker Game!\nHow many Players shall play?");
-		int input = reader.nextInt();
-		System.out.println("How Many Rounds?");
-		int input2 = reader.nextInt();
-
-		
-		//Print out said rounds
-		for(int j = 0;j<input2;j++){
-			DiceHand player = new DiceHand();
-			System.out.println("Round " + (j+1) + ":");
-			for(int i = 0;i<input;i++){
-				player.rollDiceHand();
-				System.out.println("Player " + (i + 1) + " Hand: \n\t" + player.getDiceHand());
-				player.evalDiceHand();
-				player.organizeDiceHand();
-				System.out.println(player.getCounts());
-				System.out.println("\nHand Type: " + player.determineDiceHand() + "\n");
-				player.clearCounts();
-			}
-		}*/
-		/*rolls a dice hand
-		DiceHand hand = new DiceHand();
-		hand.rollDiceHand();
-		System.out.println("Original Hand: " + hand.getDiceHand());
-		System.out.println();
-		hand.organizeDiceHand();
-		System.out.println("Organzied Hand: " + hand.getCounts());
-		System.out.println("\nHand Type: " + hand.determineDiceHand());
-		*/
-
 	}
 
 

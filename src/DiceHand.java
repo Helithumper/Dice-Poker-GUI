@@ -26,6 +26,7 @@ public class DiceHand extends Die {
 	//constructors
 	public DiceHand() {
 		rollDiceHand();
+		System.out.println("New Hand Created");
 	}
 	
 	//methods
@@ -109,10 +110,12 @@ public class DiceHand extends Die {
 	//determines the value of the hand
 	public String determineDiceHand() {
 		//use a loop to walk through the counts array
+		System.out.println("DETERMINE!");
 		for(int i = 1; i <= 6; i++) {
 			
 			//look for how many i have of something
 			//add it to a variable that represents a possible hand you get in poker
+			System.out.println(Arrays.toString(counts));
 			if(counts[i] == 5) { fiveCount++; }
 			else if (counts[i] == 4) { quadCount++; }
 			else if (counts[i] == 3) { tripletCount++; }

@@ -72,11 +72,7 @@ public class ComandConsole extends JPanel {
 				
 				JFrame frame = new JFrame();
 				JOptionPane.showMessageDialog(frame, "<html><font color = 'red'><center>THIS BUTTON DOES NOT WORK AT THE MOMENT!</font><br><font color = 'black'><center>Please Choose a Different Selection</font></html>","Button Warning",JOptionPane.ERROR_MESSAGE);
-				/*Boolean isRunning = true;
-				while(isRunning){
-				for(PlayerPanel p:Runner.panels){
-					p.buttonAction();
-				}}*/
+				
 			}
 		});
 		buildPerson.addActionListener(new ActionListener(){
